@@ -15,7 +15,7 @@
 ```bash
 $ sudo su -
 # amazon-linux-extras install ansible2 -y
-# amazon-linux-extras install php7.3 -y
+# amazon-linux-extras install php7.4 -y
 ```
 
 本番用の構築なら、以下なども作業する
@@ -85,10 +85,21 @@ Playbook は `code/ansible-develop` に配置するものとする（つまり�
 
 ### 初期起動時にエラーになった場合
 
+Guest Additions を自動でアップデートしてくれるプラグインを導入する
+
 ```
 >vagrant plugin install vagrant-vbguest
 >vagrant halt
 >vagrant up
+```
+
+解消されなければ、さらにサーバ内でカーネルのアップデートを行う
+
+```
+>vagrant ssh
+$ sudo yum install -y kernel kernel-devel gcc
+$ exit
+>vagrant reload
 ```
 
 ### Ansibleをインストール
@@ -203,6 +214,6 @@ interpreter could change this. See https://docs.ansible.com/ansible/2.8/referenc
 
 ```
   config.vm.provision :shell, run: "always", :inline => <<-EOT
-    sudo service httpd restart
+    sudo systemctl restart httpd
   EOT
 ```
