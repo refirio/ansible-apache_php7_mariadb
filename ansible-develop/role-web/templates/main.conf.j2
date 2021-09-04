@@ -1,10 +1,7 @@
-ServerTokens Prod
-
 DocumentRoot "/var/www/main/html"
 
-<Directory "/var/www/main/html">
+<Directory "/var/www/main">
     Options Includes ExecCGI FollowSymLinks
     AllowOverride All
-    Order allow,deny
-    Allow from all
+    Require all granted
 </Directory>
