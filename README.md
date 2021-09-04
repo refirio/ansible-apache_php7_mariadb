@@ -29,7 +29,7 @@ Playbookは `/home/ec2-user/ansible` に配置するものとする
 
 ## ローカル開発環境: Vagrantを準備
 
-VagrantでCentOS7を新規にインストールし、そこに開発環境（Apache 2.4.6 + PHP 7.3 + MariaDB 5.5）を構築する<br>
+VagrantでCentOS7を新規にインストールし、そこに開発環境（Apache 2.4.6 + PHP 7.4 + MariaDB 5.5）を構築する<br>
 作業フォルダは、ここでは `C:\Users\refirio\Vagrant\apache_php7_mariadb` とする<br>
 VagrantのIPアドレスは、ここでは `192.168.33.10` とする
 
