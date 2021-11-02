@@ -162,6 +162,7 @@ mysql> QUIT;
 ```
 
 以下でPHPからアクセスできる
+
 ```php
 <?php
 
